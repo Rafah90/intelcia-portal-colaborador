@@ -27,7 +27,7 @@ except Exception as e:
     st.stop()
 
 # Verifica se as colunas necessárias existem
-colunas_esperadas = ["Carimbo de data/hora", "Titulo da Informação", "Categoria", "Informação", "Data da Informação", "Imagem"]
+colunas_esperadas = ["Carimbo de data/hora", "Titulo do Comunicado", "Categoria", "Informação", "Data do Comunicado", "Imagem"]
 if not all(col in noticias.columns for col in colunas_esperadas):
     st.error(f"A planilha deve conter as colunas: {', '.join(colunas_esperadas)}")
     st.stop()
@@ -42,9 +42,10 @@ noticias = noticias.iloc[::-1]  # agora a última linha aparece primeiro
 # LAYOUT DAS INFORMAÇÕES EM 1 COLUNA SEM IMAGENS
 for i, row in noticias.iterrows():
     with st.container():
-        st.subheader(row["Titulo da Informação"])
-        st.caption(f"{row['Categoria']} | {row['Data da Informação']}")
+        st.subheader(row["Titulo do Comunicado"])
+        st.caption(f"{row['Categoria']} | {row['Data do Comunicado']}")
         st.write(row["Informação"])
         st.markdown("---")  # linha horizontal separando cada notícia
+
 
 
