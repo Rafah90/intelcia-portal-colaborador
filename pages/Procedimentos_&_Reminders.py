@@ -8,7 +8,8 @@ st.set_page_config(page_title="Portal do Colaborador", page_icon="📰",)
 st.markdown("<h1 style='color:red'>Central de Procedimentos e Reminders 📰</h1>",unsafe_allow_html=True)
 
 # SAUDAÇÃO COM ESPAÇO
-st.markdown("Olá, Bem-vindo(a) ao seu portal de informações da operação SNS24!",unsafe_allow_html=True)
+st.markdown("Olá, bem-vindo(a) ao seu portal de informações da operação SNS24.",unsafe_allow_html=True)
+st.markdown("Confirme abaixo as últimas atualizações:")  # linha horizontal separando os textos
 st.markdown("---")  # linha horizontal separando os textos
 
 # FUNÇÃO PARA CARREGAR OS DADOS
@@ -32,7 +33,7 @@ if not all(col in noticias.columns for col in colunas_esperadas):
     st.stop()
 
 # FILTRO LATERAL
-categoria = st.sidebar.selectbox("Filtro das notícias por:",["TODAS CATEGORIAS"] + sorted(list(noticias["Categoria"].unique())))
+categoria = st.sidebar.selectbox("Filtro dos comunicados por:",["TODAS CATEGORIAS"] + sorted(list(noticias["Categoria"].unique())))
 if categoria != "TODAS CATEGORIAS":noticias = noticias[noticias["Categoria"] == categoria]
 
 # INVERTER A ORDEM DAS NOTÍCIAS
@@ -45,3 +46,5 @@ for i, row in noticias.iterrows():
         st.caption(f"{row['Categoria']} | {row['Data da Informação']}")
         st.write(row["Informação"])
         st.markdown("---")  # linha horizontal separando cada notícia
+
+
