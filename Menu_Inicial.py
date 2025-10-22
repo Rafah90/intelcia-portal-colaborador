@@ -10,15 +10,16 @@ st.set_page_config(
 # TÍTULO
 st.markdown("<h1>Portal do Colaborador</h1>",unsafe_allow_html=True)
 
-st.markdown("Portal para compartilhamento de informações e solicitações diversas.",unsafe_allow_html=True)
+st.markdown("Portal para compartilhamento de comunicados, informações e solicitações diversas.",unsafe_allow_html=True)
 
 st.markdown("""
 ### Aqui você pode:
 
-- 📰 **NOTÍCIAS:** Compartilhamento de comunicados de procedimentos e reminders.<br><br><br>
+- 📰 **COMUNICADOS:** Compartilhamento de informações, procedimentos e reminders.<br><br><br>
 
 Nos próximos dias novas funcionalidades serão disponibilizadas
 """, unsafe_allow_html=True)
+
 
 
 
