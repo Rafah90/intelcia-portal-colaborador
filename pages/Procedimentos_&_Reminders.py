@@ -2,13 +2,13 @@ import streamlit as st
 import pandas as pd
 
 # CONFIGURAÇÃO DA PÁGINA
-st.set_page_config(page_title="Portal do Colaborador", layout="wide")
+st.set_page_config(page_title="Portal do Colaborador", page_icon="📰",)
 
 # TÍTULO VERMELHO
 st.markdown("<h1 style='color:red'>Central de Procedimentos e Reminders 📰</h1>",unsafe_allow_html=True)
 
 # SAUDAÇÃO COM ESPAÇO
-st.markdown("Olá! Bem-vindo(a) ao seu portal de informações da operação SNS24!",unsafe_allow_html=True)
+st.markdown("Olá, Bem-vindo(a) ao seu portal de informações da operação SNS24!",unsafe_allow_html=True)
 st.markdown("---")  # linha horizontal separando os textos
 
 # FUNÇÃO PARA CARREGAR OS DADOS
